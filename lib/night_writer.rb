@@ -1,7 +1,15 @@
-class NightWriter
+require_relative 'english_keys'
 
- def initialize(message, braille)
-   
- end
+class NightWriter
+  include EnglishKeys
+
+  def initialize(message, braille)
+    @message = message
+    @braille = braille
+  end
+
+  def read
+    message_data = @message.read
+  end
 
 end
