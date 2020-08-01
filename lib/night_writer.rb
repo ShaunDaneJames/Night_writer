@@ -3,14 +3,19 @@ require_relative 'english_keys'
 class NightWriter
   include EnglishKeys
 
-  def initialize(message, braille)
-    @message = message
-    @braille = braille
-  end
+  input_array = ARGV
 
-  def read
-    message_data = @message.read
-  end
+  puts "Created #{ARGV[1]} containing 256 characters"
+  puts input_array.to_s
+  # def initialize(message, braille)
+  #   @message = message
+  #   @braille = braille
+  # end
+  #
+  # def read
+  #   message_data = @message.read
+  # end
 
-
+  # def translate
+  # end
 end
