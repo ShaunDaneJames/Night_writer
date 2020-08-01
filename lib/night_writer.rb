@@ -6,10 +6,12 @@ class NightWriter
 
   input_array = ARGV
   english_message = File.read(ARGV[0])
-  ARGV[1] = File.open("braille.txt")
+  braille_message = File.open(ARGV[1], "w") {|file| file.write english_message}
+
 # require "pry"; binding.pry
 
   puts "Created #{ARGV[1]} containing #{english_message.split("").count} characters"
+  braille_message
   # def initialize(message, braille)
   #   @message = message
   #   @braille = braille
