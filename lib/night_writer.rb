@@ -12,4 +12,5 @@ class NightWriter
     message_data = @message.read
   end
 
+
 end
