@@ -1,24 +1,31 @@
-require_relative 'english_keys'
+require './lib/english_keys'
 require_relative 'read_message'
+include EnglishKeys
 
 class NightWriter
-  include EnglishKeys
+  @encrypted_message = []
 
-  input_array = ARGV
+
   english_message = File.read(ARGV[0])
-  ARGV[1] = File.open("braille.txt")
-# require "pry"; binding.pry
+    x = english_message.split("")
+    x.count.times do |letter|
+      @encrypted_message << english_keys[x.shift]
+    # require "pry"; binding.pry
+      end
 
-  puts "Created #{ARGV[1]} containing #{english_message.split("").count} characters"
-  # def initialize(message, braille)
-  #   @message = message
-  #   @braille = braille
+
+#Turn this into a class, assign the english message
+# to a variable so it can be reference later for
+# confirmation output to the terminal
+
+
+  braille_message = File.open(ARGV[1], "w") {|file| file.write @encrypted_message}
+
+  #
+  # puts "Created #{ARGV[1]} containing #{english_message.split("").count} characters"
+  #
+  # def encode
+  #   braille_message = File.open(ARGV[1], "w") {|file| file.write english_message}
   # end
   #
-  # def read
-  #   message_data = @message.read
-  # end
-
-  # def translate
-  # end
 end
