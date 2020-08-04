@@ -2,7 +2,7 @@ class Cell
   attr_reader :first_row,
               :second_row,
               :thrid_row
-              
+
   def initialize(letter_data)
     @first_row = letter_data[0]
     @second_row = letter_data[1]

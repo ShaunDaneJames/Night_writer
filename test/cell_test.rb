@@ -20,7 +20,6 @@ class CellTest < Minitest::Test
     expected_o = "0.\n" +
                  ".0\n" +
                  "0."
-                 # require "pry"; binding.pry
     assert_equal expected_a, cell1.make_cell(a)
     assert_equal expected_o, cell2.make_cell(o)
 
