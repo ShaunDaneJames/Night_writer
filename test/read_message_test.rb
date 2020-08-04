@@ -11,4 +11,7 @@ class ReadMessageTest < Minitest::Test
     assert_instance_of ReadMessage, read
   end
 
+  def test_it_can_read
+
+  end
 end
